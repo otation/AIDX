@@ -25,3 +25,8 @@ for과 while 비교하는 함수테스트
 For+For 중첩시키는 함수 연습   
 (christmasTree.py), (nestFor.py), (nestFor2.py)   
  
+## 리스트와 인덱스
+#### list
+list, list.append
+
+for i in [1, 4, 6, hi, hello]  -range대신 list[]안에 있는  항목을 하나씩 가져다씀   
