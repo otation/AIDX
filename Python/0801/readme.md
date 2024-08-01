@@ -12,3 +12,7 @@ Tuple
 
 ## WSL과 VSCode로 Python 개발 환경 구축하기
 ubuntu -> $code . ->VSCode ->extension -> python, python debugger   
+
+VSCode   
+Alt+Shift+방향키 :줄복사   
+Ctrl +Shift + K :줄삭제
