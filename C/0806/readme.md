@@ -42,9 +42,34 @@ int main() {
     return 0;    
 }    
 
+#### 관계연산자
+#include <stdio.h>    
 
+int main() {    
+    int i, j;    
+    printf("정수 2개 입력 :");    
+    scanf("%d%d",&i,&j);    
+    printf("\n%d > %d = %d\n", i, j, (i > j));    
+    printf("%d >= %d = %d\n", i, j, (i >= j));    
+    printf("%d < %d = %d\n", i, j, (i < j));    
+    printf("%d <= %d = %d\n", i, j, (i <= j));    
+    printf("%d == %d = %d\n", i, j, (i == j));    
+    printf("%d != %d = %d\n", i, j, (i != j));    
+    return 0;    
+}    
 
+#### 비트연산자
+#include <stdio.h>    
 
+int main() {    
+    int i, j;    
+    printf("정수 2개 입력 :");    
+    scanf("%d%d",&i,&j);    
+    printf("\n%d & %d = %d\n", i, j, (i & j));    
+    printf("%d ^ %d = %d\n", i, j, (i ^ j));    
+    printf("%d | %d = %d\n", i, j, (i | j));    
+    return 0;    
+}    
 
 
 
