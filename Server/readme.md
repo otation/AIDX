@@ -15,9 +15,14 @@ https://www.naver.com/index.html
 
 #### 교육 사이트
 https://www.w3schools.com/   
+
+HTML 빨리쓰기  
 https://docs.emmet.io/cheat-sheet/  
 
+CSS 팔레트  
+https://csszengarden.com/  
 
 #### Git에 이력서 페이지 만들기
 
 https://otation.github.io/portfolio/
+
