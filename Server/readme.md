@@ -16,3 +16,8 @@ https://www.naver.com/index.html
 #### 교육 사이트
 https://www.w3schools.com/   
 https://docs.emmet.io/cheat-sheet/  
+
+
+#### Git에 이력서 페이지 만들기
+
+https://otation.github.io/portfolio/
