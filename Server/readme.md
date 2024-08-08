@@ -30,4 +30,11 @@ https://ko.javascript.info/ninja-code
 https://otation.github.io/portfolio/
 
 
+#### 윈도우에서 데이터베이스 서버 구축
+
+Oracle -> mysql 설치
+
+데이터베이스 테이블 레코드 필드
+
+
 
