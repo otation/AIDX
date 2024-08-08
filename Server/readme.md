@@ -22,7 +22,12 @@ https://docs.emmet.io/cheat-sheet/
 CSS 팔레트  
 https://csszengarden.com/  
 
+닌자코드  
+https://ko.javascript.info/ninja-code  
+
 #### Git에 이력서 페이지 만들기
 
 https://otation.github.io/portfolio/
+
+
 
