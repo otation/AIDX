@@ -81,3 +81,6 @@ normalMan1 = PlayerChar("일반인1", hp=550, atk=50, dfs=0, crt=25, avd=0)
 normalMan2 = PlayerChar("일반인2", hp=500, atk=55, dfs=5, crt=20, avd=0)
 # 전투 시작
 startGame(normalMan1, normalMan2)
+
+
+
