@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Flashcard Game</h1>
+
+        <!-- 기존 문제 영역 -->
+        <div id="question"></div>
+        <input type="text" id="answer" placeholder="변환된 값을 입력하세요" style="width: 300px;">
+        <button id="submit">제출</button>
+        <div id="result"></div>
+
+        <hr>
+
+        <!-- 새로 추가된 메모장 -->
+        <h2>메모장</h2>
+        <textarea id="memo" placeholder="자유롭게 메모하세요..." style="width: 300px; height: 200px;"></textarea>
+    </div>
+
+    <script>
+        let currentCorrectAnswer;  // 현재 문제의 정답을 저장할 변수
+
+        async function generateQuestion() {
+            const response = await fetch('/generate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            const data = await response.json();
+
+            const questionElement = document.getElementById('question');
+            questionElement.textContent = `${data.decimal_number}를 ${data.convert_type}로 변환하세요.`;
+
+            currentCorrectAnswer = data.correct_answer;  // 정답을 저장
+        }
+
+        async function checkAnswer() {
+            const answer = document.getElementById('answer').value;
+
+            const resultElement = document.getElementById('result');
+            if (answer === currentCorrectAnswer) {
+                resultElement.textContent = '정답입니다!';
+                await generateQuestion();  // 정답을 맞추면 새로운 문제 생성
+            } else {
+                resultElement.textContent = `틀렸습니다. 정답은 ${currentCorrectAnswer}입니다.`;
+            }
+        }
+
+        // 제출 버튼 클릭 시
+        document.getElementById('submit').addEventListener('click', async () => {
+            await checkAnswer();
+        });
+
+        // 엔터키를 누르면 제출
+        document.getElementById('answer').addEventListener('keypress', async (event) => {
+            if (event.key === 'Enter') {
+                await checkAnswer();
+            }
+        });
+
+        // 초기 문제 생성
+        generateQuestion();
+    </script>
+</body>
+</html>
 
