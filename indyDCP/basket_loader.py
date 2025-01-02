@@ -20,8 +20,8 @@ offset_x = 0.031
 offset_y = 0.031
 offset_z = 0.03 #approach point distance
 
-pos_slider_joint = []
-pos_basket_joint = []
+pos_slider_joint = [87.92480973173359, -0.5254370318956958, -111.38570486022171, 0.04182418974319583, -68.41148452003854, 87.93277551632696]
+pos_basket_joint = [20.579934868932142, -13.462746360086115, -96.59974153377445, -0.2603542214573191, -70.24299243889696, 20.57075727104096]
 
 #Item slider position
 item1_pos_task = [0.18590751100902442, 0.36718133245047757, 0.3536054851654807, -180, -23, 180]
@@ -78,8 +78,10 @@ def basket_load(item1,cycle1,item2,cycle2,item3,cycle3):
         move_done_check()
 
         #joint move + work space jump point
-        # indy.joint_move_to(pos_slider_joint)
-        # indy.joint_move_to(pos_basket_joint)
+        indy.joint_move_to(pos_slider_joint)
+        move_done_check()
+        indy.joint_move_to(pos_basket_joint)
+        move_done_check()
 
         indy.task_move_to(basket_3x3[i][1])
         move_done_check()
@@ -89,6 +91,12 @@ def basket_load(item1,cycle1,item2,cycle2,item3,cycle3):
         indy.task_move_to(basket_3x3[i][1])
         move_done_check()
 
+        indy.joint_move_to(pos_basket_joint)
+        move_done_check()
+        indy.joint_move_to(pos_slider_joint)
+        move_done_check()
+
+
     for j in range(cycle2):
         indy.task_move_to(item2[1])
         move_done_check()
@@ -96,6 +104,12 @@ def basket_load(item1,cycle1,item2,cycle2,item3,cycle3):
         move_done_check()
         gripper(True)
         indy.task_move_to(item2[1])
+        move_done_check()
+
+        #joint move + work space jump point
+        indy.joint_move_to(pos_slider_joint)
+        move_done_check()
+        indy.joint_move_to(pos_basket_joint)
         move_done_check()
 
 
@@ -107,6 +121,11 @@ def basket_load(item1,cycle1,item2,cycle2,item3,cycle3):
         indy.task_move_to(basket_3x3[cycle1+j][1])
         move_done_check()
 
+        indy.joint_move_to(pos_basket_joint)
+        move_done_check()
+        indy.joint_move_to(pos_slider_joint)
+        move_done_check()
+
     for k in range(cycle3):
         indy.task_move_to(item3[1])
         move_done_check()
@@ -116,6 +135,12 @@ def basket_load(item1,cycle1,item2,cycle2,item3,cycle3):
         indy.task_move_to(item3[1])
         move_done_check()
 
+        #joint move + work space jump point
+        indy.joint_move_to(pos_slider_joint)
+        move_done_check()
+        indy.joint_move_to(pos_basket_joint)
+        move_done_check()
+
         indy.task_move_to(basket_3x3[cycle1+cycle2+k][1])
         move_done_check()
         indy.task_move_to(basket_3x3[cycle1+cycle2+k][0])
@@ -123,6 +148,11 @@ def basket_load(item1,cycle1,item2,cycle2,item3,cycle3):
         gripper(False)
         indy.task_move_to(basket_3x3[cycle1+cycle2+k][1])
         move_done_check()
+
+        indy.joint_move_to(pos_basket_joint)
+        move_done_check()
+        indy.joint_move_to(pos_slider_joint)
+        
         
     print("Robot A done loading")
 
